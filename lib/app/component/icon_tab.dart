@@ -27,11 +27,18 @@ class IconTab extends StatefulWidget{
 
 class IconTabState extends State<IconTab>{
 
+  Widget _buildLabelText(){
+    return new Text(
+      widget.text,
+      overflow: TextOverflow.fade,
+      style: new TextStyle(color: widget.color),
+      );
+  }
+
   @override
   Widget build(BuildContext context) {
 
-
-    assert(debugCheckHashMaterial(context));
+    assert(debugCheckHasMaterial(context));
 
     double height = _kTextAndIconTabHeight;
 
@@ -39,13 +46,25 @@ class IconTabState extends State<IconTab>{
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-
+        new Container(
+          child: new Image(
+              image: new AssetImage(widget.icon),
+              height: 30,
+              width: 30,
+          ),
+          margin: const EdgeInsets.only(bottom: _kMarginBottom),
+        ),
+        _buildLabelText()
       ],
     );
 
-
-
-    return null;
+    return new SizedBox(
+      height: height,
+      child: new Center(
+        child: label,
+        widthFactor: 1.0,
+      ),
+    );
   }
 
 

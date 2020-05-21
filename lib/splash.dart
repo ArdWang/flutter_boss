@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:boss/home.dart';
 import 'package:flutter/material.dart';
 
 class SplashPage extends StatefulWidget{
@@ -16,9 +17,15 @@ class SplashState extends State<SplashPage>{
     super.initState();
 
     _t = new Timer(const Duration(milliseconds: 1500),(){
+      try{
+        Navigator.of(context).pushAndRemoveUntil(
+            new MaterialPageRoute(
+                builder: (BuildContext context)=>new BossApp()),
+                (Route route) => route == null);
+      }catch(e){
 
+      }
     });
-
   }
 
 
