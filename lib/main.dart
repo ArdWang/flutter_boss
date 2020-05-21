@@ -1,4 +1,6 @@
 import "package:flutter/material.dart";
+import 'package:boss/home.dart';
+import 'package:boss/splash.dart';
 //import 'package:flutter_app/splash.dart';
 
 
@@ -11,5 +13,6 @@ void main(){
       primaryColor: new Color.fromARGB(255, 0, 215, 198),
       accentColor: Colors.cyan[300],
     ),
+    home: new SplashPage(),
   ));
 }

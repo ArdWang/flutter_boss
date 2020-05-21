@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'app/component/icon_tab.dart';
+import 'app/view/jobs_view.dart';
 
 
 class BossApp extends StatefulWidget{
@@ -47,13 +48,19 @@ class HomeState extends State<BossApp> with SingleTickerProviderStateMixin{
     return new Scaffold(
       body: new TabBarView(
           children: <Widget>[
-
+            new JobsTab(),
+            new JobsTab(),
+            new JobsTab(),
+            new JobsTab()
           ],
           controller: _controller,
       ),
       bottomNavigationBar: new Material(
         color: Colors.white,
         child: new TabBar(
+            controller: _controller,
+            indicatorSize: TabBarIndicatorSize.label,
+            labelStyle: new TextStyle(fontSize: _kTabTextSize),
             tabs: <IconTab>[
               new IconTab(
                 icon:_currentIndex == INDEX_JOB

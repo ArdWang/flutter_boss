@@ -47,6 +47,7 @@ class SplashState extends State<SplashPage>{
               new Text(
                   "BOSS直聘",
                 style: new TextStyle(
+                  color: Colors.white,
                   fontSize: 50.0,
                   fontWeight: FontWeight.bold,
                 ),
